@@ -1,0 +1,34 @@
+{
+  "name": "website-build-hooks",
+  "version": "0.0.0",
+  "keywords": [
+    "website",
+    "build",
+    "hooks"
+  ],
+  "main": "dist/index.js",
+  "author": "Kennedy Rose <krose@escaladesports.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/escaladesports/website-build-hooks.git"
+  },
+  "license": "MIT",
+  "scripts": {
+    "build": "esca-scripts build --no-react --no-css",
+    "bundle": "esca-scripts bundle --src src/index.js --no-react --no-css --dist dist-browser",
+    "dev": "esca-scripts dev --no-react --no-css",
+    "prepublishOnly": "npm run build",
+    "reset": "esca-scripts reset",
+    "start": "esca-scripts run --no-react --no-css",
+    "test": "npm run build && esca-scripts test --no-react --no-css",
+    "travis": "opn https://travis-ci.org/escaladesports/website-build-hooks/branches"
+  },
+  "devDependencies": {
+    "esca-scripts": "^1.3.1",
+    "opn-cli": "^3.1.0"
+  },
+  "dependencies": {
+    "babel-runtime": "^6.26.0",
+    "isomorphic-fetch": "^2.2.1"
+  }
+}
