@@ -20,7 +20,7 @@
     "prepublishOnly": "npm run build",
     "reset": "esca-scripts reset",
     "start": "esca-scripts run --no-react --no-css",
-    "test": "npm run build && esca-scripts test --no-react --no-css",
+    "test": "echo 'No tests'",
     "travis": "opn https://travis-ci.org/escaladesports/website-build-hooks/branches"
   },
   "devDependencies": {
