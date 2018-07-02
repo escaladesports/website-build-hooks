@@ -1,4 +1,5 @@
 import fetch from 'isomorphic-fetch'
+import titleize from 'titleize'
 
 function findWebhooks() {
 	console.log(`Pulling webhooks from environment variables...`)
@@ -8,8 +9,9 @@ function findWebhooks() {
 	for (let i in process.env) {
 		const env = process.env[i]
 		if (i.indexOf(`WEBHOOK_`) === 0) {
-			const key = i.replace(`WEBHOOK_`)
+			let key = i.replace(`WEBHOOK_`, ``)
 				.replace(regUnderscore, ' ')
+			key = titleize(key)
 			webhooks[key] = env
 			total++
 		}

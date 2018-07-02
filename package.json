@@ -29,6 +29,7 @@
   },
   "dependencies": {
     "babel-runtime": "^6.26.0",
-    "isomorphic-fetch": "^2.2.1"
+    "isomorphic-fetch": "^2.2.1",
+    "titleize": "^1.0.1"
   }
 }
