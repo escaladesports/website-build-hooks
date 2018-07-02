@@ -7,8 +7,8 @@ function findWebhooks() {
 	let total = 0
 	for (let i in process.env) {
 		const env = process.env[i]
-		if (env.indexOf(`WEBHOOK_`) === 0) {
-			const key = env.replace(`WEBHOOK_`)
+		if (i.indexOf(`WEBHOOK_`) === 0) {
+			const key = i.replace(`WEBHOOK_`)
 				.replace(regUnderscore, ' ')
 			webhooks[key] = env
 			total++
