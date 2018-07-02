@@ -4,14 +4,21 @@ function findWebhooks() {
 	console.log(`Pulling webhooks from environment variables...`)
 	const webhooks = {}
 	const regUnderscore = /_/g
+	let total = 0
 	for (let i in process.env) {
 		const env = process.env[i]
 		if (env.indexOf(`WEBHOOK_`) === 0) {
 			const key = env.replace(`WEBHOOK_`)
 				.replace(regUnderscore, ' ')
 			webhooks[key] = env
+			total++
 		}
 	}
+	if(!total){
+		console.error(`No webhooks found`)
+		process.exit(0)
+	}
+	console.log(`Found ${total} webhooks...`)
 	return webhooks
 }
 
