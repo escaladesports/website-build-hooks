@@ -1,9 +1,11 @@
 image: node:9
-before_script:
-  - yarn
 cache:
   paths:
     - node_modules/
+    - .yarn
+
+before_script:
+  - yarn
 run:
   script:
     - yarn start
